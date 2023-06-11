@@ -1,0 +1,17 @@
+
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'tienda_en_linea'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3307:3307'
+    expose:
+      - '3307'
+    volumes:
+      - my-db:/var/lib/mysqlDatos
+volumes:
+  my-db:
